@@ -1,0 +1,30 @@
+.blog-tags a {
+  @apply font-bold underline text-sea-glass;
+
+  &:hover {
+    @apply text-black;
+  }
+}
+
+#searchBox {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.searchResultPage {
+  padding: 15px 0;
+}
+
+.searchResultTitle {
+  color: #18837d !important;
+}
+
+::-moz-selection {
+  color: white;
+  background: #18837d;
+}
+
+::selection {
+  color: white;
+  background: #18837d;
+}
