@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "postbuild": "node ./scripts/prepare-search-index.js",
     "preview": "astro preview",
     "astro": "astro"
   },
