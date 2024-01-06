@@ -1,12 +1,15 @@
 import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
-const postImportResult = import.meta.globEager('./posts/*.md');
-const posts = Object.values(postImportResult);
-
-export const get = () =>
-  rss({
+export async function GET(context) {
+  const posts = await getCollection('blog');
+  return rss({
     title: 'White Birch',
     description: 'Solving Problems, Sharing Solutions',
-    site: import.meta.env.SITE,
-    items: import.meta.glob('./posts/**/*.md'),
+    site: context.site,
+    items: posts.map((post) => ({
+      ...post.data,
+      link: `/blog/${post.slug}/`,
+    })),
   });
+}

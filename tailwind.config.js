@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   content: [
     './public/**/*.html',
     './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
