@@ -1,12 +1,14 @@
 ---
+import { formatDate } from '../utils/date';
+
 export interface Props {
   title: string;
-  pubDate: string;
+  updatedDate: string;
   hero: string;
   youtube: string;
 }
 
-const { title, pubDate, hero, youtube } = Astro.props;
+const { title, updatedDate, hero, youtube } = Astro.props;
 ---
 
 <article class="max-w-5xl mx-auto px-3">
@@ -45,7 +47,7 @@ const { title, pubDate, hero, youtube } = Astro.props;
 
   <!-- Content -->
   <section class="max-w-3xl mx-auto py-6 lg:py-12 content">
-    <p class="text-sm text-gray-600">Last updated: {pubDate}</p>
+    <p class="text-sm text-gray-600">Last updated: {formatDate(updatedDate)}</p>
     <slot />
   </section>
 </article>

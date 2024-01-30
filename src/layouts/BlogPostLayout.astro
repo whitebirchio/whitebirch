@@ -5,7 +5,7 @@ import BlogPost from '../components/BlogPost.astro';
 import Footer from '../components/Footer/Footer.astro';
 
 const { content } = Astro.props;
-const { title, description, pubDate, hero, youtube } = content;
+const { title, description, updatedDate, hero, youtube } = content;
 ---
 
 <html lang={content.lang || 'en'}>
@@ -17,7 +17,12 @@ const { title, description, pubDate, hero, youtube } = content;
     <Nav />
 
     <main class="py-12 lg:py-20">
-      <BlogPost title={title} hero={hero} pubDate={pubDate} youtube={youtube}>
+      <BlogPost
+        title={title}
+        hero={hero}
+        updatedDate={updatedDate}
+        youtube={youtube}
+      >
         <slot />
       </BlogPost>
     </main>

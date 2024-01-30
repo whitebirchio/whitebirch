@@ -68,8 +68,10 @@
   }
 
   code {
-    background: #2d2d2d;
-    color: #ccc;
+    // background: #2d2d2d;
+    // color: text-black;
+    // color: #18837d;
+    font-weight: 900;
     padding: 5px;
     width: 100%;
   }
@@ -84,7 +86,7 @@
   ol li *:not(pre) code,
   ol li > code {
     // @apply inline-block text-white text-sm p-1 leading-none whitespace-nowrap font-mono align-baseline;
-    @apply text-white text-sm p-1 leading-none whitespace-nowrap font-mono align-baseline;
+    @apply p-1 leading-none whitespace-nowrap font-mono align-baseline;
   }
 
   pre,
