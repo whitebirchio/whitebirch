@@ -5,12 +5,16 @@ import BlogPost from '../components/BlogPost.astro';
 import Footer from '../components/Footer/Footer.astro';
 
 const { content } = Astro.props;
-const { title, description, updatedDate, hero, youtube } = content;
+const { title, description, updatedDate, hero, youtube, slug } = content;
 ---
 
-<html lang={content.lang || 'en'}>
+<html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={`${title} | White Birch`}
+      description={description}
+      slug={slug}
+    />
   </head>
 
   <body class="bg-white text-black font-body leading-normal personality-casual">
