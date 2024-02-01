@@ -3,7 +3,7 @@ title: 'Share Data Between CDK Stacks'
 updatedDate: '2024-01-30'
 slug: 'share-data-between-cdk-stacks'
 description: 'How to share data between CDK stacks using the SSM parameter store.'
-hero: '/images/aws-cdk.png'
+hero: '/images/aws-cdk-sharing-data.png'
 tags: ['cdk', 'ssm', 'parameter store']
 layout: '../../layouts/BlogPostLayout.astro'
 ---
@@ -14,25 +14,11 @@ This can be done using the SSM Parameter Store. The SSM Parameter Store is a ser
 
 In this article, we'll go over how to share data between CDK stacks using the SSM Parameter Store.
 
-## Create a new CDK stack
-
-First, let's create a new CDK stack. We'll use TypeScript for this example, but you can use any language that CDK supports.
-
-```bash
-cdk init app --language typescript
-```
-
-This will create a new CDK app with a single stack. We'll create a new stack to share data with.
-
-```bash
-cdk create ShareDataStack
-```
-
-This will create a new stack called `ShareDataStack` in the `lib` directory.
-
 ## Create a parameter in the SSM Parameter Store
 
-Next, we'll create a parameter in the SSM Parameter Store. We'll use the `StringParameter` construct to create a new parameter. We will set its value to the ARN of a S3 bucket that we want to share between stacks.
+First, let's assume we have a stack called `ShareDataStack` that creates an S3 bucket. We want to share the ARN of this bucket with another stack.
+
+We'll create a parameter in the SSM Parameter Store. We'll use the `StringParameter` construct to create a new parameter. We will set its value to the ARN of a S3 bucket that we want to share between stacks.
 
 ```typescript
 import * as cdk from 'aws-cdk-lib';
@@ -59,13 +45,7 @@ This will create a new parameter in the SSM Parameter Store with the name `/arns
 
 ## Access the parameter in another stack
 
-Now that we have a parameter in the SSM Parameter Store, we can access it in another stack. We'll create a new stack called `AccessDataStack` and access the parameter we created in the `ShareDataStack`.
-
-```bash
-cdk create AccessDataStack
-```
-
-This will create a new stack called `AccessDataStack` in the `lib` directory.
+Now that we have a parameter in the SSM Parameter Store, we can access it in another stack called `AccessDataStack`. We'll use the `StringParameter.fromStringParameterName` method to obtain a reference to the parameter.
 
 ```typescript
 import * as cdk from 'aws-cdk-lib';
@@ -90,17 +70,6 @@ export class AccessDataStack extends cdk.Stack {
 ```
 
 This will access the ARN of the S3 bucket we created in the `ShareDataStack` and obtain a reference to the bucket.
-
-## Deploy the stacks
-
-Now that we have our stacks created, we can deploy them to AWS.
-
-```bash
-cdk deploy ShareDataStack
-cdk deploy AccessDataStack
-```
-
-This will deploy the `ShareDataStack` and `AccessDataStack` to AWS. Once deployed, you should see the bucket name logged to the console.
 
 ## Conclusion
 

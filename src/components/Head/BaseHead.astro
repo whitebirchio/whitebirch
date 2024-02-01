@@ -16,6 +16,7 @@ const permalink = `https://whitebirch.io${slug ? `/posts/${slug}` : ''}`;
 <meta name="viewport" content="width=device-width" />
 <link rel="sitemap" href="/sitemap.xml" />
 <link rel="icon" type="”image/svg+xml”" href="/images/favicon.svg" />
+<link rel="canonical" href={permalink} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -23,7 +24,6 @@ const permalink = `https://whitebirch.io${slug ? `/posts/${slug}` : ''}`;
 <meta name="description" content={description} />
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
-<link rel="canonical" href={permalink} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
