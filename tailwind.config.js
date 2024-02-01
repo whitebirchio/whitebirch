@@ -97,7 +97,7 @@ export default {
       colors: {
         black: '#12151E',
         'hot-pink': '#fd2d78',
-        'sea-glass': '#18837d',
+        periwinkle: '#b392f0',
       },
       fontFamily: {
         display: ['Londrina Solid', 'sans-serif'],

@@ -1,5 +1,5 @@
 .blog-tags a {
-  @apply font-bold underline text-sea-glass;
+  @apply font-bold underline text-periwinkle;
 
   &:hover {
     @apply text-black;
@@ -8,10 +8,10 @@
 
 ::-moz-selection {
   color: white;
-  background: #18837d;
+  background: #b392f0;
 }
 
 ::selection {
   color: white;
-  background: #18837d;
+  background: #b392f0;
 }
