@@ -1,5 +1,5 @@
-@import "./global";
-@import "./variables";
-@import "./content";
-@import "./site";
-@import "./custom";
+@use "global";
+@use "variables";
+@use "content";
+@use "site";
+@use "custom";
