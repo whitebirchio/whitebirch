@@ -96,7 +96,7 @@ export default {
       },
       colors: {
         black: '#12151E',
-        'hot-pink': '#fd2d78',
+        gray: '#555',
         periwinkle: '#b392f0',
       },
       fontFamily: {
