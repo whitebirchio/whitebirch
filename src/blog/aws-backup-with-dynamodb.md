@@ -2,7 +2,7 @@
 title: 'The Hidden Dangers of AWS Backup with DynamoDB'
 updatedDate: '2025-01-18'
 description: 'Using AWS Backup with DynamoDB and the hidden dangers of doing so.'
-hero: '/images/aws-cdk-environments.png'
+hero: '/images/aws-backup-with-dynamodb.webp'
 tags: ['aws', 'backup', 'dynamodb', 'aws backup']
 ---
 
